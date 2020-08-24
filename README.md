@@ -1,5 +1,5 @@
 s# Weather
-
+This application is used to return temperature based on a zipcode provided by the user.
 
 ## Installation
 
