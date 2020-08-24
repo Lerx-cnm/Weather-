@@ -22,4 +22,7 @@ class CLI
   def response
     puts "The temperature is currently #{conversion(@@new_hash["temp"])}°F, with the minimum at #{conversion(@@new_hash["temp_min"])}°F, and the maximum at #{conversion(@@new_hash["temp_max"])}°F"
   end
+  def return_all
+    Weather.all
+  end
 end

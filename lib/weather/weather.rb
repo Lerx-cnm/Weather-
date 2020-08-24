@@ -2,15 +2,15 @@
 class Weather
   @@all = []
 
-  attr_accessor :name, :url
+  attr_accessor :type, :temp
 
-  def initialize(name,url)
-      @name = name
-      @url = url
-      @@all << self
+  def initialize(type, temp)
+    @type = type
+    @temp = temp
+    @@all << self
   end
 
   def self.all
       @@all
   end
-end 
+end
