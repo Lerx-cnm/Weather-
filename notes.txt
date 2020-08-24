@@ -9,3 +9,6 @@ git push -u* origin master
 *one time command
 
 chomd +x /**name of file**/
+
+
+kevlin to farenheit formule /**((X^K − 273.15) [× 9/5 + 32] = °F)**/Omit square brackets for Celsius
