@@ -1,0 +1,5 @@
+require "./lib/weather/api"
+require "./lib/weather/cli"
+require "./lib/weather/weather"
+require "pry"
+require "httparty"

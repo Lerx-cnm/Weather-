@@ -1,0 +1,11 @@
+git status
+
+git add .
+
+git commit -m "I did something yay"
+
+git push -u* origin master
+
+*one time command
+
+chomd +x /**name of file**/
