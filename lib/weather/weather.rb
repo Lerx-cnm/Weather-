@@ -1,8 +1,8 @@
 class Weather
   @@all = []
 
-  attr_reader :low, :zipcode, :temp, :high, :humidity, :feels_like
-
+  attr_reader :low,  :temp, :high, :humidity, :feels_like
+  attr_accessor :zipcode
   def initialize(hash, input = nil)
     @zipcode = input
     @low = CLI.conversion(hash["temp_min"])
