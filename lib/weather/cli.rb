@@ -1,28 +1,36 @@
 class CLI
-  def greeting
+
+  def self.greeting
     puts "Welcome User!"
   end
+
   def start
-    puts "Please enter a zipcode to check current weather:"
-    input = gets.strip
-    puts "Verifying location..."
-    if input.to_i.digits.length != 5
-      puts "Please enter a valid US zipcode."
-      start
-    else
-    @@new_hash = API.get_weather(input)
-    puts "Thank you for waiting."
-    response
+    input = ""
+    until input == "quit"
+      puts "Please enter a zipcode to check current weather:"
+      input = gets.strip
+      break if input == "quit"
+      puts "Verifying location...\n\n"
+      # binding.pry
+      if input.to_i.digits.length != 5
+        puts "Please enter a valid US zipcode."
+        start
+      else
+      Weather.new(API.get_weather(input), input)
+      response
     end
   end
-  def conversion(input)
+end
+
+  def self.conversion(input)
     temp1 = (input - 273.15)*9/5 + 32
     temp1.round
   end
+
   def response
-    puts "The temperature is currently #{conversion(@@new_hash["temp"])}°F, with the minimum at #{conversion(@@new_hash["temp_min"])}°F, and the maximum at #{conversion(@@new_hash["temp_max"])}°F"
-  end
-  def return_all
-    Weather.all
+    temps = Weather.all[0]
+    # binding.pry
+    puts "The temperature is currently #{temps.temp}°F, with the minimum at #{temps.low}°F, and the maximum at #{temps.high}°F\n\n"
+    puts "Type 'quit', if you would like to quit the program.\n\n"
   end
 end
