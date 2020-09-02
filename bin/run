@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
 
 require "./lib/enviroment"
-CLI.greeting
 CLI.new.start
